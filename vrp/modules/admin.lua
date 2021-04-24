@@ -2,11 +2,11 @@ local numarDeTickete = 0
 local Tickets = {}
 local activeTickets = {}
 local cooldown = {}
-
+adminRequests = {}
 
 local usewebhook = false
 local usesound = true
-adminRequests = {}
+
 
 local function ch_calladmin(player)
     local user_id = vRP.getUserId(player)
