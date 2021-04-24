@@ -1,6 +1,8 @@
 # vrp_tickets
 FiveM related plugin for dunko vRP servers. 
 
+----------------------------------------------
+
 Credits to the original idea and creator @plesalex100#7387
 
 Contribution by: 
@@ -10,6 +12,7 @@ Contribution by:
   @Snnaples#1000
   @zJu1C3✘#7819 ( me )
   
+----------------------------------------------
   
 *this plugin was released because of a problem with some people who got this, so we shall let all developers use it and play with it.
 
