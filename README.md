@@ -9,7 +9,7 @@ Contribution by (recreated by):
   @AlphaMac#1645
   @dav1d.exe#2201
   @Snnaples#1000
-  @zJu1C3✘#7819 ( me )
+  @zJu1C3✘#7819
   
   
 🇷🇴 : Va pwp romanasii mei draguti, chiar si pe aia fomisti rau. Se stiu ei care <3
