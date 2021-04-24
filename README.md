@@ -59,20 +59,39 @@ Contribution by:
 
 ----------------------------------------------
 
+All commands:
+
+/reports - see the staff reports saved in the database
+/resetreports - resets the reports from the database
+/tk (taketicket) - takes an active ticket
+
+!!! READ THIS !!!
+
+If u create a ticket and leave, the script will automaticly remove your ticket. 
+Also if a staff member doesn't take your ticket, then it will be automaticly deleted and a message will pop up.
+
+!!! READ THIS !!!
+----------------------------------------------
+
 Photos:
 - This photo shows the counter for the tickets.
 *only visible for staff members / members who have the groups
 ![image](https://user-images.githubusercontent.com/49794440/115944426-5747d900-a4be-11eb-927e-52113f762e3c.png)
 
 - Notification for no tickets.
+
 ![image](https://user-images.githubusercontent.com/49794440/115944467-9a09b100-a4be-11eb-89b0-c97a2575f8e2.png)
 
-- Notification POV after ticket accepted
+- Notification POV after ticket accepted 
+
 ![image](https://user-images.githubusercontent.com/49794440/115944480-ba397000-a4be-11eb-80e6-cc329e6ed219.png)
 
 - WebHook Bot Logger for accepted tickets
+
 ![image](https://user-images.githubusercontent.com/49794440/115944505-ddfcb600-a4be-11eb-9689-aa12410c2a75.png)
 
 - Reports Counter / Reset Reports ( by Command in chat )
+
 ![image](https://user-images.githubusercontent.com/49794440/115944566-36cc4e80-a4bf-11eb-8e40-dafcebc72789.png)
+
 ![image](https://user-images.githubusercontent.com/49794440/115944584-4e0b3c00-a4bf-11eb-8636-9e50d6745666.png)
