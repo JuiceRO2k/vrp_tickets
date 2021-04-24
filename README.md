@@ -27,6 +27,10 @@ And replace with the content within the script
 WARNING: 
 
 ----------------------------------------------
+[[SERVER.cfg]] :
+
+  start InteractSoundS
+
 
 1. In the repository take and replace in vrp/modules/admin.lua
 
