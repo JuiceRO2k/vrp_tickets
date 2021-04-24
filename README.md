@@ -30,6 +30,12 @@ WARNING:
 
 1. In the repository take and replace in vrp/modules/admin.lua
 
+!! IF u use a dunko vRP version older than the new Ghmattimysql(JS edition) / vrp_mysql !!
+
+  Delete also the RegisterCommand for the tickets
+
+!! IF u user old vrp_mysql / mysql-async withouth the temp ban from dunko then dont add the vRP.registermenubuilder if u already use the tickets. !!
+
 After u replace the code, if u wanna USE WEBHOOKS find ```local usewebhook```, and set it from false to true
 * replace the webhooks / image form :
  - local tkt = ""
