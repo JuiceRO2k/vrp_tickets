@@ -11,6 +11,8 @@ Contribution by (recreated by):
   @Snnaples#1000
   @zJu1C3✘#7819 ( me )
   
+  
+🇷🇴 : Va pwp romanasii mei draguti, chiar si pe aia fomisti rau. Se stiu ei care <3
 ----------------------------------------------
   
 *this plugin was released because of a problem with some people who got this, so we shall let all developers use it and play with it.
