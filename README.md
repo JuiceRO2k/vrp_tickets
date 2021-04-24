@@ -65,6 +65,9 @@ All commands:
 ----------------------------------------------
 
 If u create a ticket and leave, the script will automaticly remove your ticket. 
+
+And obviusly, the counter will go down :)
+
 Also if a staff member doesn't take your ticket, then it will be automaticly deleted and a message will pop up.
 
 !!! READ THIS !!!
