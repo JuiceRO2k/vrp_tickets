@@ -41,6 +41,7 @@ After u replace the code, if u wanna USE WEBHOOKS find ```local usewebhook```, a
  - local tkt = ""
  - local communityname = "Admin Ticket Systems"
  - local communtiylogo = ""    
+**if u want the staff to hear a sound or not, when a ticket is created then set false to : local usesound = true set in false
 
 2. Go in vrp/client/admin.lua and put the code from repository
 3. Put the permissions in vrp/cfg/groups.lua to any group you need
