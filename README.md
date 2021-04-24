@@ -70,6 +70,11 @@ And obviusly, the counter will go down :)
 
 Also if a staff member doesn't take your ticket, then it will be automaticly deleted and a message will pop up.
 
+AFTER THE CALL
+
+![image](https://user-images.githubusercontent.com/49794440/115944940-a93e2e00-a4c1-11eb-8a37-1aec26e80153.png)
+
+
 !!! READ THIS !!!
 ----------------------------------------------
 
