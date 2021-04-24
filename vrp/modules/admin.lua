@@ -99,30 +99,27 @@ RegisterCommand("tk", function(source)
   end
 end)
 
+RegisterCommand('resetreports', function(source, args, msg)
+  local user_id = vRP.getUserId(source)
+  if vRP.hasPermission(user_id,"admin.resetrepo") then
+    vRPclient.notify(source, {"~g~Succes: ~w~All ticket counts were deleted ~r~PERMANENTLY"})
+    exports.ghmattimysql:execute("UPDATE vrp_users SET reports = 0", function()end)
+  end
+end)
 
-if stocktickets then 
-    RegisterCommand('resetreports', function(source, args, msg)
-      local user_id = vRP.getUserId(source)
-      if vRP.hasPermission(user_id,"admin.resetrepo") then
-        vRPclient.notify(source, {"~g~Succes: ~w~All ticket counts were deleted ~r~PERMANENTLY"})
-        exports.ghmattimysql:execute("UPDATE vrp_users SET reports = 0", function()end)
+RegisterCommand('reports', function(source, args, msg)
+    local user_id = vRP.getUserId(source)
+    if vRP.hasPermission(user_id,"admin.repolist") then
+      local rows = exports.ghmattimysql:executeSync("SELECT reports, id FROM vrp_users WHERE reports != 0")
+      local content = "<em><b>Staff Reports</b></em>"
+      for i, v in pairs(rows) do
+          content = content .. "<br/><em>ID: " .. v.id .. " -> " .. v.reports .. " reports</em>"
       end
-    end)
-
-    RegisterCommand('reports', function(source, args, msg)
-        local user_id = vRP.getUserId(source)
-        if vRP.hasPermission(user_id,"admin.repolist") then
-          local rows = exports.ghmattimysql:executeSync("SELECT reports, id FROM vrp_users WHERE reports != 0")
-          local content = "<em><b>Staff Reports</b></em>"
-          for i, v in pairs(rows) do
-              content = content .. "<br/><em>ID: " .. v.id .. " -> " .. v.reports .. " reports</em>"
-          end
-          vRPclient.setDiv(source,{"war_reports",".div_war_reports{ background-color: rgba(0,0,0,0.75); color: skyblue; font-weight: bold; width: 500px; padding: 10px; margin: auto; margin-top: 150px; }",content})
-          Wait(10000)
-          vRPclient.removeDiv(source,{"war_reports"})
-        end
-    end)
-end
+      vRPclient.setDiv(source,{"war_reports",".div_war_reports{ background-color: rgba(0,0,0,0.75); color: skyblue; font-weight: bold; width: 500px; padding: 10px; margin: auto; margin-top: 150px; }",content})
+      Wait(10000)
+      vRPclient.removeDiv(source,{"war_reports"})
+    end
+end)
 
  AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
     if first_spawn then 
