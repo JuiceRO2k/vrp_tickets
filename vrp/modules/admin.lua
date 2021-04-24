@@ -2,7 +2,10 @@ local numarDeTickete = 0
 local Tickets = {}
 local activeTickets = {}
 local cooldown = {}
+
+
 local usewebhook = false
+local usesound = true
 adminRequests = {}
 
 local function ch_calladmin(player)
@@ -17,6 +20,13 @@ local function ch_calladmin(player)
         if(Tickets[i] == nil) then
             table.insert(activeTickets,user_id)
             numarDeTickete = numarDeTickete + 1
+                    
+            if usesound then
+              if vRP.hasPermission(user_id,"admin.tickets") then
+                TriggerClientEvent('InteractSound_CL:PlayOnOne', -1, 'ticket', 0.2)
+              end
+            end
+                    
             SetTimeout(60000,function()
               cooldown[user_id] = nil
             end)
