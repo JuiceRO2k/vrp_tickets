@@ -6,7 +6,7 @@ adminRequests = {}
 
 local usewebhook = false
 local usesound = true
-
+local stocktickets = false
 
 local function ch_calladmin(player)
     local user_id = vRP.getUserId(player)
@@ -62,12 +62,15 @@ RegisterCommand("tk", function(source)
       local targetSource = vRP.getUserSource(targetId)
       vRPclient.getPosition(targetSource, {}, function(x,y,z)
         vRPclient.teleport(_src,{x,y,z})
-        exports.ghmattimysql:execute("UPDATE `vrp_users` SET `reports` = `reports` + 1 WHERE `id` = @sender_id", {['@sender_id'] = _src})
+        
+        if stocktickets then 
+          exports.ghmattimysql:execute("UPDATE `vrp_users` SET `reports` = `reports` + 1 WHERE `id` = @sender_id", {['@sender_id'] = _src})
+        end
 
         if usewebhook then
-          local tkt = "https://discord.com/api/webhooks/799046581369569310/k74cqvXg8EfADw9_qX_Rk0QvCvHN7Z91Q9sxX2ljzcMO71CRc1az0jV_LivmCMXtPxJC"
+          local tkt = ""
           local communityname = "Admin Ticket Systems"
-          local communtiylogo = "https://cdn.discordapp.com/attachments/788065188922130463/795578826997628968/logodiscord.png"
+          local communtiylogo = ""
           local connect = {
             {
               ["color"] = "8663711",
@@ -96,27 +99,30 @@ RegisterCommand("tk", function(source)
   end
 end)
 
-RegisterCommand('resetreports', function(source, args, msg)
-  local user_id = vRP.getUserId(source)
-  if vRP.hasPermission(user_id,"admin.resetrepo") then
-    vRPclient.notify(source, {"~g~Succes: ~w~All ticket counts were deleted ~r~PERMANENTLY"})
-    exports.ghmattimysql:execute("UPDATE vrp_users SET reports = 0", function()end)
-  end
-end)
 
-RegisterCommand('reports', function(source, args, msg)
-    local user_id = vRP.getUserId(source)
-    if vRP.hasPermission(user_id,"admin.repolist") then
-      local rows = exports.ghmattimysql:executeSync("SELECT reports, id FROM vrp_users WHERE reports != 0")
-      local content = "<em><b>Staff Reports</b></em>"
-      for i, v in pairs(rows) do
-          content = content .. "<br/><em>ID: " .. v.id .. " -> " .. v.reports .. " reports</em>"
+if stocktickets then 
+    RegisterCommand('resetreports', function(source, args, msg)
+      local user_id = vRP.getUserId(source)
+      if vRP.hasPermission(user_id,"admin.resetrepo") then
+        vRPclient.notify(source, {"~g~Succes: ~w~All ticket counts were deleted ~r~PERMANENTLY"})
+        exports.ghmattimysql:execute("UPDATE vrp_users SET reports = 0", function()end)
       end
-      vRPclient.setDiv(source,{"war_reports",".div_war_reports{ background-color: rgba(0,0,0,0.75); color: skyblue; font-weight: bold; width: 500px; padding: 10px; margin: auto; margin-top: 150px; }",content})
-      Wait(10000)
-      vRPclient.removeDiv(source,{"war_reports"})
-    end
-end)
+    end)
+
+    RegisterCommand('reports', function(source, args, msg)
+        local user_id = vRP.getUserId(source)
+        if vRP.hasPermission(user_id,"admin.repolist") then
+          local rows = exports.ghmattimysql:executeSync("SELECT reports, id FROM vrp_users WHERE reports != 0")
+          local content = "<em><b>Staff Reports</b></em>"
+          for i, v in pairs(rows) do
+              content = content .. "<br/><em>ID: " .. v.id .. " -> " .. v.reports .. " reports</em>"
+          end
+          vRPclient.setDiv(source,{"war_reports",".div_war_reports{ background-color: rgba(0,0,0,0.75); color: skyblue; font-weight: bold; width: 500px; padding: 10px; margin: auto; margin-top: 150px; }",content})
+          Wait(10000)
+          vRPclient.removeDiv(source,{"war_reports"})
+        end
+    end)
+end
 
  AddEventHandler("vRP:playerSpawn", function(user_id, source, first_spawn)
     if first_spawn then 
