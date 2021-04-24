@@ -1,11 +1,10 @@
 # vrp_tickets
 FiveM related plugin for dunko vRP servers. 
 
+Credits to the original idea and creator @plesalex100#7387
 ----------------------------------------------
 
-Credits to the original idea and creator @plesalex100#7387
-
-Contribution by: 
+Contribution by (recreated by): 
 
   @AlphaMac#1645
   @dav1d.exe#2201
@@ -46,26 +45,24 @@ NECESARY PERMISSIONS:
 4. Go in the database at table : VRP_USERS and add this line:
 ```ALTER TABLE vrp_users ADD IF NOT EXISTS reports int(30) default 0```
 
+Credits to the original idea and creator @plesalex100#7387
 ----------------------------------------------
 
-Credits to the original idea and creator @plesalex100#7387
-
-Contribution by: 
+Contribution by (recreated by): 
 
   @AlphaMac#1645
   @dav1d.exe#2201
   @Snnaples#1000
   @zJu1C3✘#7819 ( me )
 
-----------------------------------------------
-
 All commands:
-
+----------------------------------------------
 /reports - see the staff reports saved in the database
 /resetreports - resets the reports from the database
 /tk (taketicket) - takes an active ticket
 
 !!! READ THIS !!!
+----------------------------------------------
 
 If u create a ticket and leave, the script will automaticly remove your ticket. 
 Also if a staff member doesn't take your ticket, then it will be automaticly deleted and a message will pop up.
