@@ -76,6 +76,7 @@ If u create a ticket and leave the server, the script will automaticly remove yo
 
 And obviusly, the counter will go down :)
 
+Also, when a player makes a ticket it will make a sound if u wish to choose the InteractSoundS plugin which is set already with a little sound.
 
 !!! READ THIS !!!
 ----------------------------------------------
