@@ -40,12 +40,13 @@ WARNING:
 
 !! IF u user old vrp_mysql / mysql-async withouth the temp ban from dunko then dont add the vRP.registermenubuilder if u already use the tickets. !!
 
-After u replace the code, if u wanna USE WEBHOOKS find ```local usewebhook```, and set it from false to true
+After u replace the code, if u wanna USE WEBHOOKS find ```local usewebhook```, and set it from false to true (in modules/admin.lua coed)
 * replace the webhooks / image form :
  - local tkt = ""
  - local communityname = "Admin Ticket Systems"
  - local communtiylogo = ""    
-**if u want the staff to hear a sound or not, when a ticket is created then set false to : ```local usesound = true``` set in false
+**if u want the staff to hear a sound or not, when a ticket is created then set false to : ```local usesound = true``` set in false (in modules/admin.lua coed)
+**if u want to use the database export to send the number of tickets then SET ```local stocktickets = false``` on true (in modules/admin.lua coed)
 
 2. Go in vrp/client/admin.lua and put the code from repository
 3. Put the permissions in vrp/cfg/groups.lua to any group you need
